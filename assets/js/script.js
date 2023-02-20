@@ -241,6 +241,38 @@ const playMusic = function () {
 playBtn.addEventListener("click", playMusic);
 
 
+
+
+
+
+
+const playImg = document.querySelector(".img-cover");
+
+const playImgMusic = function () {
+  if (audioSource.paused) {
+    audioSource.play();
+    playBtn.classList.add("active");
+    playInterval = setInterval(updateRunningTime, 500);
+  } else {
+    audioSource.pause();
+    playBtn.classList.remove("active");
+    clearInterval(playInterval);
+  }
+}
+
+playImg.addEventListener("click", playImgMusic);
+
+
+
+
+
+
+
+
+
+
+
+
 /** update running time while playing music */
 
 const playerRunningTime = document.querySelector("[data-running-time");
